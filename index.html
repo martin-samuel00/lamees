@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lamis</title>
+  <style>
+    :root{--bg1:#fff0f3;--bg2:#ffe6ec;--accent:#c94b72}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Kufi Arabic', sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2));}
+
+    nav{display:none;justify-content:space-between;align-items:center;padding:14px 22px;background:rgba(255,255,255,.06);backdrop-filter:blur(6px);position:sticky;top:0}
+    .brand{font-weight:800;font-size:18px;color:#222}
+    .navlinks{display:flex;gap:10px}
+    .navlinks a{padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:700;color:#222}
+    .navlinks a.active{background:var(--accent);color:#fff}
+
+    .container{max-width:980px;margin:26px auto;padding:18px}
+
+    .loginWrap{min-height:80vh;display:flex;align-items:center;justify-content:center}
+    .loginBox{max-width:520px;margin:40px auto;padding:28px;background:linear-gradient(180deg,#fff,#fff);border-radius:16px;box-shadow:0 30px 80px rgba(201,75,114,.12);text-align:center}
+    .loginTitle{font-size:22px;margin:0 0 8px;color:#222;font-weight:800}
+    .loginSub{color:#666;margin-bottom:18px}
+    .pwInput{width:100%;padding:12px;border-radius:10px;border:1px solid #eee;font-size:16px;margin-bottom:12px}
+    .btn{display:inline-block;padding:10px 18px;border-radius:12px;border:0;background:var(--accent);color:#fff;font-weight:800;cursor:pointer}
+
+    #homeCard{display:none;background:linear-gradient(180deg,#fff,#fff);border-radius:16px;padding:36px 26px;box-shadow:0 30px 80px rgba(201,75,114,.08);text-align:center}
+    .bigMsg{font-size:28px;line-height:1.4;color:#222;font-weight:700}
+    .bigMsg .small{font-size:18px;font-weight:600;color:#444;margin-top:12px}
+
+    .messages{display:none;background:#fff;border-radius:12px;padding:18px;box-shadow:0 14px 50px rgba(0,0,0,.06);margin-top:18px;text-align:right}
+    .msg{padding:14px;border-radius:10px;background:#fff;margin-bottom:12px;border:1px solid #f6e9ec;color:#333}
+    .msg .meta{font-size:13px;color:#666;margin-bottom:6px}
+
+    .contactCard{display:none;background:#fff;padding:22px;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.06);line-height:1.8;text-align:right}
+    .phoneLink{display:inline-block;padding:8px 12px;border-radius:10px;background:rgba(201,75,114,.08);color:var(--accent);font-weight:800;text-decoration:none}
+
+    footer{text-align:center;padding:18px 0;margin-top:40px;color:#222;font-size:14px}
+
+    /* Adjust image size */
+    #homeCard img{width:60%;max-width:300px;height:auto;border-radius:16px;margin-top:20px;}
+
+    /* MEDIA QUERIES */
+    @media (max-width:1024px){
+      .loginBox{padding:24px;}
+      .bigMsg{font-size:24px}
+      .bigMsg .small{font-size:16px}
+      .navlinks{flex-wrap:wrap;gap:8px}
+      #homeCard img{width:70%;max-width:250px;}
+    }
+    @media (max-width:720px){
+      .loginBox{margin:20px;padding:18px}
+      .bigMsg{font-size:22px}
+      .bigMsg .small{font-size:15px}
+      .navlinks{flex-direction:column;gap:6px}
+      #homeCard img{width:80%;max-width:220px;}
+    }
+    @media (max-width:480px){
+      .loginBox{padding:14px}
+      .bigMsg{font-size:20px}
+      .bigMsg .small{font-size:14px}
+      .navlinks a{padding:6px 10px;font-size:14px}
+      #homeCard img{width:90%;max-width:200px;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- LOGIN PAGE -->
+    <div class="loginWrap" id="loginPage">
+      <div class="loginBox">
+        <div class="loginTitle">Welcome</div>
+        <div class="loginSub">Enter password to open the page</div>
+        <input id="pw" class="pwInput" type="password" placeholder="Password" autocomplete="off" />
+        <div style="display:flex;gap:10px;justify-content:center;margin-top:8px">
+          <button class="btn" id="loginBtn">Enter</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV BAR -->
+    <nav id="navbar">
+      <div class="brand">Lamees</div>
+      <div class="navlinks">
+        <a href="#home" id="navHome">Home</a>
+        <a href="#messages" id="navMsg">Messages</a>
+        <!-- <a href="#contact" id="navContact">Contact</a> -->
+      </div>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home">
+      <div id="homeCard">
+        <div class="bigMsg">💗 لميس… 💗<div class="small">لميس… يمكن اللي حصل وجّعني شوية، بس برضه إنتي أغلى من إني أسيب زعل يعدّي ما بينا. أنا كل اللي نفسي فيه إننا نفهم بعض أكتر، ونرجّع الهدوء والحلو اللي كان بينا… وأحسن كمان. 💕</div></div>
+        <img src="pic.jpeg" alt="Lamis Image">
+      </div>
+    </section>
+
+    <!-- MESSAGES PAGE -->
+    <section id="messages" class="messages">
+      <h2 style="text-align:right;margin-top:0">الرسائل</h2>
+      <div class="msg"><div class="meta">message 1</div>لميس… إنتي أكتر حد بيرّاح قلبي. بجد وجودك في حياتي ليه معنى تاني خالص. أنا يمكن أغلط، ويمكن أتوتر، بس عمري ما كنت قصدي أوجّعك. أنا بحبك أكتر ما بتخيّلي، ونفسي ندوس على الغلط ونكمّل اللي بنبنيه مع بعض.</div>
+      <div class="msg"><div class="meta">message 2</div>لميس… أنا مش ناقصني غير رضاكي. والله ما في يوم عدّى وأنا زعلان منك، كل اللي كنت زعلان منه إني زعلتك. إنتي مش بس حبيبتي… إنتي صاحبتي، وضهري، وسبب من أسباب فرحتي.</div>
+      <div class="msg"><div class="meta">message 3</div>عارفة يا لميس؟ كل ما بزعل، أول حد بيجي في دماغي هو انتي. وكل ما بفرح، أول حد نفسي أحكيله هو انتي. أنا مش عايز أخسرك، ومش عايز يوم يعدّي وإنتي مش راضية عني.</div>
+      <div class="msg"><div class="meta">message 4</div>أنا يمكن مش بعرف أعبّر بالكلام طول الوقت، بس جوّا قلبي كلام كتير ليكي… يمكن لو فتحتي قلبي هتلاقي اسمك مكتوب في كل الحتت. إنتي غالية… وعمري ما هسمح لزعل صغير يبوّظ اللي بينا.</div>
+      <div class="msg"><div class="meta">message 5</div>لميس… خلينا نبدأ صفحة جديدة. صفحة كلها هدوء، وحب، واهتمام. أنا مستعد أصلّح أي حاجة، وأسمع كل حاجة، بس أهم حاجة… تفضلي في حياتي.</div>
+    </section>
+
+    <!-- CONTACT PAGE -->
+    <section id="contact">
+      <div class="contactCard">
+        <h3>Contact</h3>
+        <p>لو عايزة تكلميني، دا رقمي:</p>
+        <p><a href="https://wa.me/201550464120" class="phoneLink">+20 155 046 4120</a></p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    made with love by martin❤️
+  </footer>
+
+  <script>
+    const PASSWORD = "17/11";
+    const loginBtn = document.getElementById('loginBtn');
+    const pwInput = document.getElementById('pw');
+    const loginPage = document.getElementById('loginPage');
+    const navbar = document.getElementById('navbar');
+    const pages = {home: document.getElementById('homeCard'), messages: document.getElementById('messages'), contact: document.getElementById('contact')};
+
+    function showPage(page){
+      for(const k in pages){if(pages[k]) pages[k].style.display = 'none';}
+      if(pages[page]) pages[page].style.display = 'block';
+      document.querySelectorAll('.navlinks a').forEach(a=>a.classList.remove('active'));
+      const id = 'nav' + (page.charAt(0).toUpperCase()+page.slice(1));
+      const el = document.getElementById(id);
+      if(el) el.classList.add('active');
+    }
+
+    loginBtn.onclick = ()=>{
+      if(pwInput.value.trim() === PASSWORD){
+        loginPage.style.display = 'none';
+        navbar.style.display = 'flex';
+        showPage('home');
+      } else {
+        alert('Wrong password');
+        pwInput.value = '';
+        pwInput.focus();
+      }
+    };
+
+    document.getElementById('navHome').onclick = ()=>showPage('home');
+    document.getElementById('navMsg').onclick = ()=>showPage('messages');
+    document.getElementById('navContact').onclick = ()=>showPage('contact');
+    pwInput.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') loginBtn.click(); });
+  </script>
+</body>
+</html>
